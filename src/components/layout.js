@@ -1,5 +1,6 @@
 import React from "react"
-import Header from "./header"
+import PropTypes from 'prop-types';
+import Header from "@/components/header"
 
 const Layout = ({ children }) => {
   return (
@@ -9,5 +10,9 @@ const Layout = ({ children }) => {
     </div>
   )
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;
