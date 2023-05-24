@@ -119,6 +119,7 @@ function Home() {
                           }
                         }}
                         key={item.id}
+                        data-elem={`vacancy-${item.id}`}
                       >
                         <Vacancy
                           favourites={favourites}
@@ -131,7 +132,6 @@ function Home() {
                           paymentFrom={item.payment_from}
                           paymentTo={item.payment_to}
                           currency={item.currency}
-                          data-elem={`vacancy-${item.id}`}
                         />
                       </Link>
                     );
