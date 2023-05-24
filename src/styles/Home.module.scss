@@ -1,0 +1,110 @@
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
+.wrapper {
+  display: flex;
+  column-gap: 28px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 162px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
+.vacanciesWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-top: 16px;
+}
+
+.pagination {
+  margin-top: 24px;
+}
+
+.paginationList {
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+.paginationItem {
+  min-width: 32px;
+  min-height: 32px;
+  border: 1px solid $grey-300;
+  border-radius: 4px;
+  color: $color-black;
+  background-color: $color-white;
+}
+
+.paginationItemPrev {
+  background-image: url('/images/icons/pagination-arrow-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  min-width: 32px;
+  min-height: 32px;
+  border: 1px solid $grey-300;
+  border-radius: 4px;
+  color: $color-black;
+  background-color: $color-white;
+
+  &.disabled {
+    border: 1px solid $grey-200;
+    background-image: url('/images/icons/pagination-arrow-icon-disabled.svg');
+  }
+
+  &.disabled .paginationLinkPrev {
+    cursor: default;
+  }
+}
+
+.paginationItemNext {
+  background-image: url('/images/icons/pagination-arrow-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  min-width: 32px;
+  min-height: 32px;
+  border: 1px solid $grey-300;
+  border-radius: 4px;
+  color: $color-black;
+  background-color: $color-white;
+  transform: rotate(180deg);
+
+  &.disabled {
+    border: 1px solid $grey-200;
+    background-image: url('/images/icons/pagination-arrow-icon-disabled.svg');
+  }
+
+  &.disabled .paginationLinkNext {
+    cursor: default;
+  }
+}
+
+.paginationLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0px 8px;
+  @include font(normal, 400, 16px, 22px);
+  cursor: pointer;
+}
+
+.active {
+  border: 1px solid $blue-main-500;
+  color: $color-white;
+  background-color: $blue-main-500;
+}
+
+.paginationLinkPrev,
+.paginationLinkNext {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

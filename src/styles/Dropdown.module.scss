@@ -1,0 +1,91 @@
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdownHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 8px 12px;
+  @include font(normal, 400, 14px, 20px);
+  color: $grey-500;
+  background-color: transparent;
+  border: 1px solid $grey-300;
+  border-radius: 8px;
+  user-select: none;
+  transition: .3s ease-in-out;
+
+  &::after {
+    content: url("/images/icons/arrow-down-icon.svg");
+    stroke: $grey-500;
+    width: 24px;
+    height: 24px;
+    transition: .3s ease-in-out;
+  }
+
+  &.opened {
+    border-color: $blue-main-500;
+  }
+
+  &.active {
+    color: $color-black;
+  }
+
+  &.opened::after {
+    content: url("/images/icons/arrow-up-icon.svg");
+    transform: rotate(-180deg);
+    transition: .3s ease-in-out;
+  }
+
+  &:hover {
+    border-color: $blue-main-500;
+    transition: .3s ease-in-out;
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  max-height: 188px;
+  padding: 4px;
+  background: $color-white;
+  border-radius: 8px;
+  border: 1px solid $grey-300;
+  transition: .5s ease-in-out;
+  overflow: scroll;
+  z-index: 10;
+}
+
+.dropdownItem {
+  padding: 8px;
+  @include font(normal, 400, 14px, 20px);
+  color: $color-black;
+  transition: .3s ease-in-out;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    padding: 8px 12px;
+    color: $color-black;
+    border-radius: 8px;
+    background-color: $blue-100;
+  }
+}
+
+.dropdownItemSelected {
+  padding: 8px 12px;
+  @include font(normal, 400, 14px, 20px);
+  color: $color-white;
+  border-radius: 8px;
+  background-color: $blue-main-500;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}

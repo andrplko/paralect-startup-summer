@@ -1,0 +1,174 @@
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
+.wrapper {
+  width: 100%;
+  height: max-content;
+  max-width: 315px;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #EAEBED;
+  border-radius: 12px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+}
+
+.filtersTitle {
+  @include font(normal, 700, 20px, 20px);
+  color: $color-black;
+}
+
+.resetButton {
+  @include font(normal, 500, 14px, 20px);
+  color: $grey-500;
+  background-color: transparent;
+  user-select: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &::after {
+    content: url("/images/icons/cross-icon.svg");
+    position: relative;
+    right: 0;
+    top: 3px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+  }
+
+  &:hover::after {
+    content: url("/images/icons/hover-cross-icon.svg");
+  }
+
+  &:hover {
+    color: $blue-400;
+  }
+}
+
+.industryTitle {
+  @include font(normal, 700, 16px, 19px);
+  color: $color-black;
+}
+
+.salary {
+  padding: 18px 0 0;
+}
+
+.inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin-top: 8px;
+}
+
+.quantity {
+  position: relative;
+}
+
+.inputFrom,
+.inputTo {
+  width: 100%;
+  padding: 10px 11px;
+  @include font(normal, 400, 14px, 20px);
+  background-color: $color-white;
+  color: $color-black;
+  border: 1px solid $grey-300;
+  border-radius: 8px;
+
+  &:focus {
+    border-color: $blue-main-500;
+    caret-color: $blue-main-500;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $grey-500;
+  }
+}
+
+.inputFrom::-webkit-inner-spin-button,
+.inputTo::-webkit-inner-spin-button,
+.inputFrom::-webkit-outer-spin-button,
+.inputTo::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+.buttonsWrapper {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 2px;
+}
+
+.quantityUp,
+.quantityDown {
+  background-color: transparent;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.quantityUp {
+  width: 12px;
+  height: 12px;
+
+  &::after {
+    content: url('/images/icons/small-arrow-icon.svg');
+    display: flex;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.quantityDown {
+  display: flex;
+  align-items: center;
+  width: 12px;
+  height: 12px;
+
+  &::after {
+    content: url('/images/icons/small-arrow-icon.svg');
+    display: flex;
+    align-items: center;
+    transform: rotate(180deg);
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.applyButton {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  text-align: center;
+  @include font(normal, 500, 14px, 21px);
+  color: $color-white;
+  border-radius: 8px;
+  background-color: $blue-main-500;
+  appearance: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: .3s ease;
+
+  &:hover {
+    background-color: $blue-400;
+  }
+
+  &:active {
+    background-color: $blue-600;
+  }
+}

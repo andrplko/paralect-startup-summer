@@ -1,0 +1,60 @@
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
+.search {
+  position: relative;
+  &::after {
+    content: url("/images/icons/search-icon.svg");
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12.5px 0 12.5px 36px;
+  @include font(normal, 400, 14px, 21px);
+  color: $color-black;
+  border: 1px solid $grey-200;
+  border-radius: 8px;
+
+  &::placeholder {
+    color: $grey-500;
+  }
+
+  &:focus {
+    border-color: $blue-main-500;
+    caret-color: $blue-main-500;
+    outline: none;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  padding: 5.5px 20px;
+  text-align: center;
+  @include font(normal, 500, 14px, 21px);
+  color: $color-white;
+  background-color: $blue-main-500;
+  border-radius: 8px;
+  appearance: none;
+  border: none;
+  outline: none;
+  transition: .3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $blue-400;
+  }
+
+  &:active {
+    background-color: $blue-600;
+  }
+}

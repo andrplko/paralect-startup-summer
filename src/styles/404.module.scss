@@ -1,0 +1,28 @@
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 34px;
+  margin-top: 120px;
+}
+
+.title {
+  @include font(normal, 700, 24px, 29px);
+  color: $grey-900;
+}
+
+.searchVacanciesButton {
+  padding: 10px 24px;
+  @include font(normal, 600, 14px, 22px);
+  color: $blue-600;
+  background-color: $blue-100;
+  border-radius: 8px;
+
+  &:active {
+    transform: scale(1.02);
+  }
+}

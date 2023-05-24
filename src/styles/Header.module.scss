@@ -1,0 +1,42 @@
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
+.header {
+  background-color: $color-white;
+}
+
+.wrapper,
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 162px;
+  column-gap: 280px;
+}
+
+.logo {
+  column-gap: 12px;
+}
+
+.logoTitle {
+  margin: 0;
+  @include font(normal, 600, 24px, 36px);
+  letter-spacing: -0.02em;
+  color: $color-black;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  column-gap: 60px;
+}
+
+.navLink {
+  &.active {
+    color: $blue-main-500;
+  }
+}

@@ -1,0 +1,42 @@
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+  margin: 0;
+  background-color: $color-bg;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.vacancyWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 777px;
+  width: 100%;
+  margin: 0 auto;
+  row-gap: 20px;
+}
+
+.description {
+  max-height: max-content;
+  padding: 23px;
+  background-color: $color-white;
+  border: 1px solid $grey-200;
+  border-radius: 12px;
+
+  & ul {
+    padding-left: 23px;
+  }
+
+  & li {
+    list-style: disc;
+  }
+
+  & li::marker {
+    list-style-position: inside;
+  }
+}

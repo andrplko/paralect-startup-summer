@@ -1,0 +1,56 @@
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
+.vacancy {
+  display: flex;
+  justify-content: space-between;
+  padding: 23px;
+  background-color: $color-white;
+  border: 1px solid $grey-200;
+  border-radius: 12px;
+}
+
+.vacanсyPosition {
+  @include font(normal, 600, 20px, 24px);
+  color: $blue-main-500;
+}
+
+.vacancyLocation::before {
+  content: url("/images/icons/location-icon.svg");
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.salary {
+  margin: 12px 0;
+}
+
+.salaryValue {
+  @include font(normal, 600, 16px, 20px);
+  color: $color-black;
+}
+
+.workSchedule::before {
+  content: "•";
+  margin: 0 12px;
+  color: $grey-600;
+
+}
+
+.favouriteIconEmpty {
+  stroke: $grey-500;
+  fill: transparent;
+  transition: fill .3s ease, stroke .3s ease;
+  cursor: pointer;
+
+  &:hover {
+    stroke: $blue-main-500;
+  }
+}
+
+.favouriteIconActive {
+  stroke: $blue-main-500;
+  fill: $blue-main-500;
+  cursor: pointer;
+}
