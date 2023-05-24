@@ -69,23 +69,6 @@ function Home() {
   }
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "x-secret-key": 'GEU4nvd3rej*jeh.eqp',
-        "x-api-app-id": 'v3.r.137440105.ffdbab114f92b821eac4e21f485343924a773131.06c3bdbb8446aeb91c35b80c42ff69eb9c457948',
-        "Content-Type": 'application/json',
-        "Authorization": "Bearer v3.r.137440105.7b73be738fee43b9b5d64add55b523ca88677da0.c809c2e7c8566dea2f5032bd2ac4f3419ee50f0c"
-      },
-    }
-    fetch(`https://startup-summer-2023-proxy.onrender.com/2.0/oauth2/refresh_token/?refresh_token=v3.r.137440105.9806b9163059952f30d3aaae5da79cd174bca257.f82776db2df63097098b44c9354b707e6f803606&client_id=2356&client_secret=v3.r.137440105.ffdbab114f92b821eac4e21f485343924a773131.06c3bdbb8446aeb91c35b80c42ff69eb9c457948`, options)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-  }, []);
-
-  useEffect(() => {
     applyFilters()
   }, [router.query, currentPage])
 
