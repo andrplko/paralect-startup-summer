@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Salary from '@/components/salary';
 import FavouriteIcon from '@/components/favourite-icon';
 import FavouriteIconEmpty from '@/components/favourite-icon-empty';
+import { inter } from '../utils/fonts';
 import styles from '@/styles/Vacancy.module.scss';
 
 const Vacancy = ({ data, id, profession, location, workSchedule, paymentFrom, paymentTo, currency, favourites, setFavourites }) => {
-
   const addFav = () => {
     setFavourites([...JSON.parse(localStorage.getItem("favourites")), data]);
   };
@@ -26,6 +26,7 @@ const Vacancy = ({ data, id, profession, location, workSchedule, paymentFrom, pa
   };
 
   return (
+    <main className={inter.className}>
       <div className={`${styles.vacancy}`}>
         <div className={styles.vacancyContent}>
           <p className={`${styles.vacanсyPosition}`}>{profession}</p>
@@ -48,12 +49,13 @@ const Vacancy = ({ data, id, profession, location, workSchedule, paymentFrom, pa
           data-elem={`vacancy-${id}-shortlist-button`}
         >
           {isFavourited ? (
-            <FavouriteIcon />
+            <FavouriteIcon className={styles.favouriteIcon} />
           ) : (
             <FavouriteIconEmpty className={styles.favouriteIconEmpty} />
           )}
         </div>
       </div>
+    </main>
   );
 };
 

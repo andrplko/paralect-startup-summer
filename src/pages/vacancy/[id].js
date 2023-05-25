@@ -59,6 +59,7 @@ const VacancyPage = () => {
                 favourites={favourites}
                 setFavourites={setFavourites}
                 id={dataVacancy.id}
+                data={dataVacancy}
                 profession={dataVacancy.profession}
                 location={dataVacancy.town.title}
                 workSchedule={dataVacancy.type_of_work.title}
