@@ -15,7 +15,7 @@ import styles from '@/styles/Home.module.scss';
 
 function Home() {
   const router = useRouter();
-  const [dataVacancies, setDataVacancies] = useState(null);
+  const [dataVacancies, setDataVacancies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
   const [total, setTotal] = useState(0);
@@ -71,7 +71,7 @@ function Home() {
     applyFilters()
   }, [router.query, currentPage])
 
-  if (dataVacancies === null && !isLoading) {
+  if (dataVacancies.length === 0 && !isLoading) {
     return <Custom404 />;
   }
 
@@ -127,7 +127,7 @@ function Home() {
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={1}
                     onPageChange={(e) => { setCurrentPage(e.selected) } }
-                    forcePage={currentPage}
+                    forcePage={currentPage >= 0 && currentPage < pageCount ? currentPage : 0}
                     pageCount={pageCount}
                     containerClassName={styles.paginationList}
                     pageClassName={styles.paginationItem}
@@ -150,6 +150,7 @@ function Home() {
           </div>
         </div>
       </main>
+      {/* {dataVacancies === null && !isLoading && <Custom404 />} */}
     </>
   )
 }
