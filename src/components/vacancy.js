@@ -45,14 +45,12 @@ const Vacancy = ({ data, id, profession, location, workSchedule, paymentFrom, pa
             e.preventDefault();
             handleToggleFavourite();
           }}
+          data-elem={`vacancy-${id}-shortlist-button`}
         >
           {isFavourited ? (
-            <FavouriteIcon data-elem={`vacancy-${id}-shortlist-button`} />
+            <FavouriteIcon />
           ) : (
-            <FavouriteIconEmpty
-              className={styles.favouriteIconEmpty}
-              data-elem={`vacancy-${id}-shortlist-button`}
-            />
+            <FavouriteIconEmpty className={styles.favouriteIconEmpty} />
           )}
         </div>
       </div>
