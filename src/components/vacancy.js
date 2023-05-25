@@ -61,7 +61,7 @@ const Vacancy = ({ data, id, profession, location, workSchedule, paymentFrom, pa
 
 Vacancy.propTypes = {
   data: PropTypes.object.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   profession: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   workSchedule: PropTypes.string.isRequired,
