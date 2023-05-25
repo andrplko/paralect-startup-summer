@@ -23,8 +23,8 @@ function Home() {
   const pageCount = Math.ceil(total / vacanciesPerPage);
 
   const [favourites, setFavourites] = useState(() => {
-    if (typeof window !== "undefined" && window.localStorage) {
-      const storage = JSON.parse(localStorage.getItem("favourites"));
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const storage = JSON.parse(localStorage.getItem('favourites'));
       if (storage === null || storage === undefined) {
         return [];
       }
@@ -38,7 +38,7 @@ function Home() {
   });
 
   useEffect(() => {
-    localStorage.setItem("favourites", JSON.stringify(favourites));
+    localStorage.setItem('favourites', JSON.stringify(favourites));
   }, [favourites]);
 
   const applyFilters = () => {
@@ -79,9 +79,9 @@ function Home() {
     <>
       <Head>
         <title>Job Search App</title>
-        <meta property="og:title" content="Job Search App" key="title" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="./images/icons/favicon.svg" />
+        <meta property='og:title' content='Job Search App' key='title' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='./images/icons/favicon.svg' />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.wrapper}>
@@ -121,9 +121,9 @@ function Home() {
                 </div>
                 <div className={`${styles.pagination} ${roboto.className}`}>
                   <ReactPaginate
-                    previousLabel=""
-                    breakLabel="..."
-                    nextLabel=""
+                    previousLabel=''
+                    breakLabel='...'
+                    nextLabel=''
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={1}
                     onPageChange={(e) => { setCurrentPage(e.selected) } }
