@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import axiosHeaders from '@/components/axiosHeaders';
-import styles from '@/styles/Dropdown.module.scss'
+import styles from '@/styles/Dropdown.module.scss';
 
 const Dropdown = (props) => {
   const [dataIndustry, setDataIndustry] = useState([]);
@@ -81,8 +81,8 @@ const Dropdown = (props) => {
 }
 
 Dropdown.propTypes = {
-  value: PropTypes.string,
-  onChange: PropTypes.func,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Dropdown;

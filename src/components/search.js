@@ -27,7 +27,7 @@ const Search = () => {
   };
 
   return (
-    <div className={styles.search} data-elem='search-input'>
+    <div className={styles.search}>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
@@ -35,6 +35,7 @@ const Search = () => {
           value={keyword}
           onChange={handleChange}
           className={styles.searchInput}
+          data-elem='search-input'
         />
         <button
           type='submit'

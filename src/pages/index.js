@@ -1,9 +1,8 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import ReactPaginate from 'react-paginate';
 import Head from 'next/head';
 import Link from 'next/link';
+import ReactPaginate from 'react-paginate';
 import axios from 'axios';
 import axiosHeaders from '@/components/axiosHeaders';
 import Loader from '@/components/loader';
