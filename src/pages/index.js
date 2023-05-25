@@ -57,14 +57,14 @@ function Home() {
         payment_to: paymentTo || undefined,
       }
     }).then((response) => {
-        setIsLoading(false);
-        const dataVacancies = response.data;
-        setTotal(Math.min(dataVacancies.total, 500));
-        setDataVacancies(dataVacancies.objects);
-      }).catch((error) => {
-        console.log(error);
-        setIsLoading(false);
-      });
+      setIsLoading(false);
+      const dataVacancies = response.data;
+      setTotal(Math.min(dataVacancies.total, 500));
+      setDataVacancies(dataVacancies.objects);
+    }).catch((error) => {
+      console.log(error);
+      setIsLoading(false);
+    });
   }
 
   useEffect(() => {
