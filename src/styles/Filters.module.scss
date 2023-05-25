@@ -9,6 +9,10 @@
   background: #FFFFFF;
   border: 1px solid #EAEBED;
   border-radius: 12px;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 773px;
+  }
 }
 
 .filters {

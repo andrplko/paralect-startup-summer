@@ -11,6 +11,7 @@
 }
 
 .title {
+  text-align: center;
   @include font(normal, 700, 24px, 29px);
   color: $grey-900;
 }

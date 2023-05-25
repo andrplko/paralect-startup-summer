@@ -52,5 +52,9 @@
 .favouriteIconActive {
   stroke: $blue-main-500;
   fill: $blue-main-500;
+}
+
+.favouriteIcon,
+.favouriteIconActive {
   cursor: pointer;
 }
