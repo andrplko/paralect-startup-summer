@@ -127,7 +127,7 @@ function Home() {
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={1}
                     onPageChange={(e) => { setCurrentPage(e.selected) } }
-                    forcePage={currentPage >= 0 && currentPage < pageCount ? currentPage : 0}
+                    forcePage={currentPage}
                     pageCount={pageCount}
                     containerClassName={styles.paginationList}
                     pageClassName={styles.paginationItem}
@@ -150,7 +150,6 @@ function Home() {
           </div>
         </div>
       </main>
-      {/* {dataVacancies === null && !isLoading && <Custom404 />} */}
     </>
   )
 }
