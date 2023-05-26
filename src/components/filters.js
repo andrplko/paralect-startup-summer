@@ -80,17 +80,17 @@ const Filters = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.filters}>
-        <h3 className={`${styles.filtersTitle}`}>Фильтры</h3>
+        <h3 className={styles.filtersTitle}>Фильтры</h3>
         <button
           type='button'
           onClick={resetFilters}
-          className={`${styles.resetButton}`}
+          className={styles.resetButton}
         >
           Сбросить все
         </button>
       </div>
       <div className={styles.industry}>
-        <h4 className={`${styles.industryTitle}`}>Отрасль</h4>
+        <h4 className={styles.industryTitle}>Отрасль</h4>
         <Dropdown value={filterOptions.key} onChange={handleIndustryChange} />
       </div>
       <div className={styles.salary}>
