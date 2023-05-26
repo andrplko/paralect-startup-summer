@@ -81,13 +81,13 @@ const Filters = () => {
     <div className={styles.wrapper}>
       <div className={styles.filters}>
         <h3 className={`${styles.filtersTitle}`}>Фильтры</h3>
-          <button
-            type='button'
-            onClick={resetFilters}
-            className={`${styles.resetButton}`}
-          >
-            Сбросить все
-          </button>
+        <button
+          type='button'
+          onClick={resetFilters}
+          className={`${styles.resetButton}`}
+        >
+          Сбросить все
+        </button>
       </div>
       <div className={styles.industry}>
         <h4 className={`${styles.industryTitle}`}>Отрасль</h4>
@@ -95,67 +95,67 @@ const Filters = () => {
       </div>
       <div className={styles.salary}>
         <h4 className={styles.salaryTitle}>Оклад</h4>
-          <div className={styles.inputsWrapper}>
-            <div className={styles.quantity}>
-              <input
-                type='number'
-                name='paymentFrom'
-                placeholder='От'
-                onChange={(e) => handleFilterChange(e)}
-                className={styles.inputFrom}
-                value={filterOptions.paymentFrom}
-                min='0'
-                data-elem='salary-from-input'
+        <div className={styles.inputsWrapper}>
+          <div className={styles.quantity}>
+            <input
+              type='number'
+              name='paymentFrom'
+              placeholder='От'
+              onChange={(e) => handleFilterChange(e)}
+              className={styles.inputFrom}
+              value={filterOptions.paymentFrom}
+              min='0'
+              data-elem='salary-from-input'
+            />
+            <div className={styles.buttonsWrapper}>
+              <button
+                className={styles.quantityUp}
+                onClick={() => {
+                  handleIncreasePaymentFrom(true);
+                }}
               />
-              <div className={styles.buttonsWrapper}>
-                <button
+              <button
+                className={styles.quantityDown}
+                onClick={() => {
+                  handleIncreasePaymentFrom(false);
+                }}
+              />
+            </div>
+          </div>
+          <div className={styles.quantity}>
+            <input
+              type='number'
+              name='paymentTo'
+              placeholder='До'
+              onChange={(e) => handleFilterChange(e)}
+              className={styles.inputTo}
+              value={filterOptions.paymentTo}
+              min='0'
+              data-elem='salary-to-input'
+            />
+            <div className={styles.buttonsWrapper}>
+              <button
                   className={styles.quantityUp}
                   onClick={() => {
-                    handleIncreasePaymentFrom(true);
+                    handleIncreasePaymentTo(true);
                   }}
                 />
                 <button
                   className={styles.quantityDown}
                   onClick={() => {
-                    handleIncreasePaymentFrom(false);
+                    handleIncreasePaymentTo(false);
                   }}
                 />
-              </div>
-            </div>
-            <div className={styles.quantity}>
-              <input
-                type='number'
-                name='paymentTo'
-                placeholder='До'
-                onChange={(e) => handleFilterChange(e)}
-                className={styles.inputTo}
-                value={filterOptions.paymentTo}
-                min='0'
-                data-elem='salary-to-input'
-              />
-              <div className={styles.buttonsWrapper}>
-                <button
-                    className={styles.quantityUp}
-                    onClick={() => {
-                      handleIncreasePaymentTo(true);
-                    }}
-                  />
-                  <button
-                    className={styles.quantityDown}
-                    onClick={() => {
-                      handleIncreasePaymentTo(false);
-                    }}
-                  />
-              </div>
             </div>
           </div>
-          <button
-            className={styles.applyButton}
-            onClick={handleApplyFilters}
-            data-elem='search-button'
-          >
-            Применить
-          </button>
+        </div>
+        <button
+          className={styles.applyButton}
+          onClick={handleApplyFilters}
+          data-elem='search-button'
+        >
+          Применить
+        </button>
       </div>
     </div>
   );
